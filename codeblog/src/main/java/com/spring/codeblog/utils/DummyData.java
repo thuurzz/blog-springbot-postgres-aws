@@ -5,7 +5,6 @@ import com.spring.codeblog.repository.CodeBlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class DummyData {
     CodeBlogRepository codeBlogRepository;
 
     //@PostConstruct
-    public void savePosts(){
+    public void savePosts() {
 
         List<Post> postList = new ArrayList<>();
         Post post1 = new Post();
@@ -34,7 +33,7 @@ public class DummyData {
         postList.add(post1);
         postList.add(post2);
 
-        for(Post post: postList){
+        for (Post post : postList) {
             Post postSaved = codeBlogRepository.save(post);
             System.out.println(postSaved.getId());
         }
